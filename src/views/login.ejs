@@ -1,0 +1,52 @@
+<%- include("./partials/header",{title:"FirstCry Account Login"}) %>
+<link rel="stylesheet" href="css/register.css">
+<body>
+    <div class="center-align main">
+        <a href="/" class="logo"><img src="https://cdn.fcglcdn.com/brainbees/images/n/fc-logo-s.jpg" alt="Firstcry"></a>
+        <div class="form">
+            <form action="/login" method="post">
+                <div class="box">
+                    Login/Register
+                </div>
+                <div class="box">
+                    <label for="inp">Email ID/Mobile No.</label>
+                    <input type="text" name="inp" id="inp", placeholder="Enter your Email ID or Mobile No.">
+                    <% if(alert!=null){
+                        for(let x of alert){
+                          if(x.param == "inp"){%>
+                          <p class="alert"><%= x.msg %></p>
+                    <% break; }}} %>
+                    <% if(msg!=null){ %>
+                        <p class="alert" ><%= msg %></p>
+                    <% } %>
+                </div>
+                <div class="box">
+                    <button class="btn" type="submit">CONTINUE</button>
+                </div>
+            </form>
+            <div class="login">
+                <div class="text">
+                    <hr>OR<hr>
+                </div>
+                <div class="btn2">
+                    <img src="https://cdn.fcglcdn.com/brainbees/images/n/login-signup-facebook.png" alt="">
+                    <!-- <i class="bi bi-facebook"></i> -->
+                    <p>FACEBOOK</p>
+                </div>
+                <div class="btn2">
+                    <img src="https://cdn.fcglcdn.com/brainbees/images/n/login-signup-gmail.png" alt="">
+                    <!-- <i class="bi bi-google"></i> -->
+                    <p>GOOGLE</p>
+                </div>
+                <div class="text">
+                    <a href="/register">New to FirstCry? Register Here</a>
+                </div>
+                <hr>
+                <div class="text terms">
+                    <p>By continuing, you agree to Firstcry's <a href="">Conditions of Use</a> and <a href="">Privacy Notice.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

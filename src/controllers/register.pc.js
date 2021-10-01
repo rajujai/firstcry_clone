@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({extended:false});
 
 router.get("", (req,res)=>{
     try{
-    res.render("register.ejs",{
+    res.render("register",{
         alert:null,
         msg:null
     });
@@ -18,23 +18,21 @@ router.get("", (req,res)=>{
 })
 
 router.post("", urlencodedParser, [
-    check("name", "Name is not valid, 3+ characters required")
+    check("name", "Please enter Your Full Name")
     .isLength({min:3}),
-    check("email", "Email is required")
-    .isLength({min:3}),
-    check("email", "Email is not valid")
+    check("mobile", "Please enter Mobile No.")
+    .isLength({min:1}),
+    check("email", "Please enter Email ID")
+    .isLength({min:3})
     .isEmail()
     .normalizeEmail(),
-    check("password", "Password is required")
-    .isLength({min:1}),
-    check("password", "Enter minimum 4 characters")
-    .isLength({min:4})
-
+    check("password", "Please enter valid Password")
+    .isLength({min:8})
 ], async (req, res)=>{
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             const alert = errors.array();
-            res.render("pages/register", {
+            res.render("register", {
                 alert,
                 msg:null
             })
@@ -43,13 +41,13 @@ router.post("", urlencodedParser, [
                 let userEmail = req.body.email;
                 const user = await User.find({email:userEmail}).lean().exec()
                 if(user.length>0){
-                        res.render("pages/register",{
+                        res.render("register",{
                         alert:null,
                         msg:`Welcome back ${user[0].name}, you are already registered.`
                     });
                 }else{
                     const user = await User.create(req.body);
-                    res.render("pages/login",{
+                    res.render("login",{
                         alert:null,
                         msg:null
                     });

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400&display=swap');
+#navfooter .m-bg-light:hover{
+    background-color: #fff;
+}
+.bg-spcolor1{
+    background-color: #f1f1f1;
+}
+.m-text-color1{
+    font-family: 'Kalam', cursive;
+    color: #ff7043 !important;
+}
+#footer{
+    background-color: #d9f3f4;
+}
+#footer
+.m-icon{
+    font-size: 2rem;
+    color: #42c1c5;
+}
+.m-text-color2:hover, .m-icon{
+    color: #42c1c5;
+}
+.fs-14{
+    font-size: 14px;
+}
+.col-2 .fs-14:hover{
+    text-decoration: underline;
+}
+.m-icon2{
+    font-size: 1.5em;
+}

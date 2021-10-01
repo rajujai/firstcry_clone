@@ -12,13 +12,20 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 const userCont = require("./controllers/user.controller");
-
-const registerCont = require("./controllers/register.pc");
-
-
+const imageCont = require("./controllers/image.controller");
 
 app.use("/users", userCont);
-app.use("/register", registerCont);
+app.use("/images", imageCont);
+
+
+
+const registerPc = require("./controllers/register.pc");
+const loginPc = require("./controllers/login.pc");
+const indexPc = require("./controllers/index.pc");
+
+app.use("/", indexPc);
+app.use("/register", registerPc);
+app.use("/login", loginPc);
 
 app.listen(port, async()=>{
     await connect();

@@ -1,0 +1,32 @@
+<% title =`Baby Products Online India: Newborn Baby Products & Kids Online Shopping at FirstCry.com` %>
+<%- include("./partials/header", {title:title})%>
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/footer.css">
+<body>
+    <%- include("./partials/navbar")%>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="400">
+                <img src="https://cdn.fcglcdn.com/brainbees/banners/test/HP_MKTG_P04_Steal_Deal_Buy5at60_Desktop_defaut_1st-oct_2021930232935.webp" class="d-block w-100" alt="...">
+            </div>
+            <% for(let img of images){ %>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img class="d-block w-100" src=
+                <%= img.img %>
+                >
+                </div>
+                <% } %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <%- include("./partials/navfooter")%>
+    <%- include("./partials/footer")%>
+</body>
+</html>

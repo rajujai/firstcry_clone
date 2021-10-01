@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+body{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    color: #575757;
+}
+#navbar .m-btn, .m-btn:hover, .m-btn::after{
+    color: #ff7043;
+    outline: none;
+    border: none;
+    border-radius: 10px !important;
+}
+#navbar .m-input{
+    outline-color: #ff7043 !important;
+    outline-offset: 0;
+    border-radius: 10px !important;
+    font-size: 16px !important;
+    width: 245px;
+}
+#navbar .dropdown:hover .dropdown-menu{
+    display: block;
+}
+.navbar .sp{
+    overflow: auto;
+    white-space: nowrap;
+}
+#navbar .bi-cart{
+    font-size: 2rem;
+    color: #575757;
+}
+#cart{
+    display: flex;
+}
+#cart p{
+    text-decoration: none;
+    color: #575757;
+    padding-top: 16%;
+}
+.m-bg-light:hover{
+    background-color: #fff;
+}
+#navbar .dropdown-menu{
+    border: none;
+    min-width: 100%;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fs-15{
+    font-size: 15px !important;
+}
+.wth2{
+    width: 5px;
+}
